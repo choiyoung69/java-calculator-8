@@ -137,6 +137,14 @@ class ApplicationTest extends NsTest {
         );
     }
 
+    @Test
+    void 더할때_오버플로우_예외_테스트() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("1," + (Integer.MAX_VALUE)))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});
