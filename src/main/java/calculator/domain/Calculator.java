@@ -1,8 +1,14 @@
 package calculator.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Calculator {
-    private List<String> operands = new ArrayList<>();
+
+    public static int add(int[] numbers) {
+        int sum = 0;
+
+        for (int number : numbers) {
+            sum += number;
+        }
+
+        return sum;
+    }
 }

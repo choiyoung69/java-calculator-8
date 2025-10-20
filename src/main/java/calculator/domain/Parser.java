@@ -6,7 +6,7 @@ public class Parser {
 
     private static final String DEFAULT_DELIMITERS = ",|:";
 
-    public String[] parse(String input) {
+    public static String[] parse(String input) {
 
         if (input.startsWith("//")) {
             int customDelimiterIndex = input.indexOf("\n");

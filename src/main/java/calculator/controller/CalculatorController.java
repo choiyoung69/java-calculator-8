@@ -6,11 +6,11 @@ import calculator.view.InputView;
 
 public class CalculatorController {
 
-    private final CalculationService calculationService;
-
     public static void run() {
 
         InputDto userInput = InputView.getUserInput();
+        int result = CalculationService.calculate(userInput);
+
 
     }
 }

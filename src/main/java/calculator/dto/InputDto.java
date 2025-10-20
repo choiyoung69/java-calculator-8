@@ -8,7 +8,7 @@ public class InputDto {
         this.delimitedNumbers = delimitedNumbers;
     }
 
-    public String getUserInput() {
+    public String getDelimitedNumbers() {
         return delimitedNumbers;
     }
 }
