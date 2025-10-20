@@ -11,7 +11,7 @@ public class Calculator {
                 sum = Math.addExact(sum, number.intValue());
             }
         } catch (ArithmeticException e) {
-            throw new IllegalArgumentException("정수 오버플로우가 발생했습니다.", e);
+            throw new IllegalArgumentException("계산할 떄 오버플로우가 발생했습니다.", e);
         }
         return sum;
     }
