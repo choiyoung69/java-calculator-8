@@ -1,9 +1,8 @@
 package calculator.service;
 
 import calculator.domain.Calculator;
-import calculator.domain.CustomDelimiterStrategy;
-import calculator.domain.DefaultDelimiterStrategy;
 import calculator.domain.DelimiterStrategy;
+import calculator.domain.DelimiterStrategyFactory;
 import calculator.domain.Parser;
 import calculator.dto.InputDto;
 import java.util.Arrays;
@@ -12,11 +11,7 @@ public class CalculationService {
 
     public static int calculate(InputDto inputDto) {
         String input = inputDto.getDelimitedNumbers();
-
-        DelimiterStrategy strategy = input.startsWith("//")
-                ? new CustomDelimiterStrategy()
-                : new DefaultDelimiterStrategy();
-
+        DelimiterStrategy strategy = DelimiterStrategyFactory.from(input);
         Parser parser = new Parser(strategy);
         String[] stringNumbers = parser.parse(inputDto.getDelimitedNumbers());
 
