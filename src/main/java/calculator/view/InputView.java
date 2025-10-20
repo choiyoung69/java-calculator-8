@@ -9,7 +9,7 @@ public class InputView {
 
     public static InputDto getUserInput() {
         System.out.println(REQUIRE_OPERAND_STRING_MESSAGE);
-        return new InputDto(Console.readLine());
+        return InputDto.from(Console.readLine());
     }
 
 }

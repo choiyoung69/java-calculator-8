@@ -1,16 +1,22 @@
 package calculator.dto;
 
 public class InputDto {
+
     private final String delimitedNumbers;
 
-    public InputDto(String delimitedNumbers) {
-        validateNotNull(delimitedNumbers);
+    private InputDto(String delimitedNumbers) {
         this.delimitedNumbers = delimitedNumbers;
     }
 
+    public static InputDto from(String delimitedNumbers) {
+        validateNotNull(delimitedNumbers);
+        return new InputDto(delimitedNumbers);
+    }
+
+
     private static void validateNotNull(String delimitedNumbers) {
         if (delimitedNumbers == null) {
-            throw new IllegalArgumentException("입력 문자열이 null일 수 없습니다.");
+            throw new IllegalArgumentException("input이 null일 수 없습니다.");
         }
     }
 
