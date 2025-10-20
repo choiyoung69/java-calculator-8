@@ -1,24 +1,14 @@
 package calculator.domain;
 
-import java.util.regex.Pattern;
-
 public class Parser {
 
     private DelimiterStrategy delimiterStrategy;
 
-    private static final String DEFAULT_DELIMITERS = ",|:";
+    public Parser(DelimiterStrategy delimiterStrategy) {
+        this.delimiterStrategy = delimiterStrategy;
+    }
 
-    public static String[] parse(String input) {
-
-        if (input.startsWith("//")) {
-            int customDelimiterIndex = input.indexOf("\\n");
-            String customDelimiter = Pattern.quote(input.substring(2, customDelimiterIndex)); // 특수문자 처리
-            input = input.substring(customDelimiterIndex + 2);
-
-            String allDelimiters = DEFAULT_DELIMITERS + "|" + customDelimiter;
-            return input.split(allDelimiters);
-        }
-
-        return input.split(DEFAULT_DELIMITERS);
+    public String[] parse(String input) {
+        return delimiterStrategy.split(input);
     }
 }
