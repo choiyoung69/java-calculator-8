@@ -1,13 +1,14 @@
 package calculator.dto;
 
 public class InputDto {
-    private final String userInput;
+    private final String delimitedNumbers;
+    ;
 
-    public InputDto(String userInput) {
-        this.userInput = userInput;
+    public InputDto(String delimitedNumbers) {
+        this.delimitedNumbers = delimitedNumbers;
     }
 
     public String getUserInput() {
-        return userInput;
+        return delimitedNumbers;
     }
 }
