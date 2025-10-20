@@ -5,6 +5,11 @@ import java.util.regex.Pattern;
 public class CustomDelimiterStrategy extends DefaultDelimiterStrategy {
 
     @Override
+    public boolean canHandle(String input) {
+        return input != null && input.startsWith("//");
+    }
+
+    @Override
     public String[] split(String input) {
         int customDelimiterIndex = input.indexOf("\\n");
         String customDelimiter = Pattern.quote(input.substring(2, customDelimiterIndex));
