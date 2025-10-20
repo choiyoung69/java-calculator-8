@@ -1,4 +1,4 @@
-package calculator.domain;
+package calculator.domain.parser;
 
 public class DefaultDelimiterStrategy implements DelimiterStrategy {
 

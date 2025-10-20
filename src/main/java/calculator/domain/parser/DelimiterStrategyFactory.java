@@ -1,4 +1,4 @@
-package calculator.domain;
+package calculator.domain.parser;
 
 import java.util.List;
 
