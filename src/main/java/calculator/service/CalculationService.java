@@ -11,6 +11,7 @@ public class CalculationService {
 
     public static int calculate(InputDto inputDto) {
         String input = inputDto.getDelimitedNumbers();
+
         DelimiterStrategy strategy = DelimiterStrategyFactory.from(input);
         Parser parser = new Parser(strategy);
         String[] stringNumbers = parser.parse(inputDto.getDelimitedNumbers());
