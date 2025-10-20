@@ -11,7 +11,8 @@ public class CalculatorController {
 
         InputDto userInput = InputView.getUserInput();
         int result = CalculationService.calculate(userInput);
+        System.out.println(result);
         OutputView.printResult(result);
-        
+
     }
 }
