@@ -4,6 +4,8 @@ import java.util.regex.Pattern;
 
 public class Parser {
 
+    private DelimiterStrategy delimiterStrategy;
+
     private static final String DEFAULT_DELIMITERS = ",|:";
 
     public static String[] parse(String input) {
